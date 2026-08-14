@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import declarative_base, sessionmaker
 
 from app.config import DATABASE_URL
 
@@ -14,6 +14,7 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine
 )
+Base = declarative_base()
 
 
 def check_database_connection():

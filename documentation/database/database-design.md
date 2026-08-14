@@ -42,3 +42,12 @@ Configuration is loaded from environment variables using python-dotenv.
 
 The `/db-health` endpoint validates connectivity by executing `SELECT 1`.
 
+## API Schema Layer
+
+The application separates database persistence models from API request and response schemas.
+
+SQLAlchemy models represent how patient data is stored in PostgreSQL, while Pydantic schemas define what data the API accepts and returns.
+
+For example, `PatientCreate` accepts client-controlled fields such as `full_name`, `email`, `phone`, and `date_of_birth`, while `PatientResponse` also includes database-managed fields such as `patient_id` and `created_at`.
+
+This separation improves validation, maintainability, and control over which fields are exposed through the API.
