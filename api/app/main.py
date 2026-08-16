@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 from app.config import APP_ENV, APP_VERSION
 
+from app.database import check_database_connection
+
 app = FastAPI(
     title="Secure Aged Care Cloud Platform",
     description=(
@@ -34,3 +36,7 @@ def version():
         "version": APP_VERSION,
         "environment": APP_ENV,
     }
+
+@app.get("/db-health")
+def database_health():
+    return check_database_connection()
