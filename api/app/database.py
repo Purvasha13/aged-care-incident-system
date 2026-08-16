@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import declarative_base
 
 from app.config import DATABASE_URL
 
+Base = declarative_base()
 
 engine = create_engine(
     DATABASE_URL,
