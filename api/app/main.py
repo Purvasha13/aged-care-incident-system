@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 
+from app.config import APP_ENV, APP_VERSION
+
 app = FastAPI(
     title="Secure Aged Care Cloud Platform",
     description=(
         "Cloud-native aged care platform for resident operations, "
         "workforce rostering, security, and reliability engineering."
     ),
-    version="0.1.0",
+    version=APP_VERSION,
 )
 
 
@@ -29,6 +31,6 @@ def health():
 @app.get("/version")
 def version():
     return {
-        "version": "0.1.0",
-        "environment": "development",
+        "version": APP_VERSION,
+        "environment": APP_ENV,
     }
