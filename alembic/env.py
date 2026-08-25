@@ -13,6 +13,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1] / "api"))
 from app.config import DATABASE_URL
 from app.database import Base
 from app.models.resident import Resident
+from app.models.facility import Facility
 
 Base.metadata
 # this is the Alembic Config object, which provides
