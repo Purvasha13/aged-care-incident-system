@@ -15,6 +15,7 @@ from app.database import Base
 from app.models.resident import Resident
 from app.models.facility import Facility
 from app.models.staff import Staff
+from app.models.availability import StaffAvailability
 
 Base.metadata
 # this is the Alembic Config object, which provides
