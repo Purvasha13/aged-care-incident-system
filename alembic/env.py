@@ -14,6 +14,7 @@ from app.config import DATABASE_URL
 from app.database import Base
 from app.models.resident import Resident
 from app.models.facility import Facility
+from app.models.staff import Staff
 
 Base.metadata
 # this is the Alembic Config object, which provides
