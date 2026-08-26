@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from app.config import APP_ENV, APP_VERSION
 from app.database import check_database_connection
 from app.routers.residents import router as residents_router
-
+from app.routers.facilities import router as facilities_router
+from app.routers.staff import router as staff_router
 
 app = FastAPI(
     title="Secure Aged Care Cloud Platform",
@@ -15,6 +16,8 @@ app = FastAPI(
 )
 
 app.include_router(residents_router)
+app.include_router(facilities_router)
+app.include_router(staff_router)
 
 
 @app.get("/")
